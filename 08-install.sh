@@ -10,4 +10,12 @@ else
     echo " you are root user"
 fi
 
-apt install git -y
+apt install gitt -y
+
+if [ $? -ne 0 ]
+then
+    echo "Error installing git"
+    exit 1
+else
+    echo "Installed success"
+fi
