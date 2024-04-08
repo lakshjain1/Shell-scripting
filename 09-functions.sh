@@ -33,6 +33,6 @@ yum install git -y &>>$LOGFILE
 
 VALIDATE $? "Install GITLAB"
 
-yum install tasree -y &>>$LOGFILE
+yum install tree -y &>>$LOGFILE
 
 VALIDATE $? "INSTALL Tree"
