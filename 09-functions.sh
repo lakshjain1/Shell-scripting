@@ -33,6 +33,6 @@ apt install git -y &>>$LOGFILE
 
 VALIDATE $? "Install GITLAB"
 
-apt install tree -y &>>$LOGFILE
+apt install tasree -y &>>$LOGFILE
 
 VALIDATE $? "INSTALL Tree"
