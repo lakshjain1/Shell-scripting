@@ -28,3 +28,7 @@ fi
 apt install git -y
 
 VALIDATE $?
+
+apt install tree -y
+
+VALIDATE $?
