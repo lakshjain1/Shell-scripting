@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# our program goal is to install mysql
-
-DATE=$(date +%F)
+DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
@@ -10,33 +8,31 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-# this function should validate the previous command and inform user it is success or failure
 VALIDATE(){
-    #$1 --> it will receive the argument1
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 ... $R FAILURE $N"
+        echo -e "$R Error installing $2 $N"
         exit 1
     else
-        echo -e "$2 ... $G SUCCESS $N"
+        echo -e "$G Installed success $2 $N"
     fi
 }
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]
+
+if [ $USERID -ne 0 ] #give space in [ in this ]
 then
-    echo "ERROR:: Please run this script with root access"
+    echo "ERROR:Please run this script with root user"
     exit 1
-# else
-#     echo "INFO:: You are root user"
+#else
+#    echo " you are root user"
 fi
 
-# it is our responsibility again to check installation is success or not
-apt install mysql -y &>>$LOGFILE
+yum install git -y &>>$LOGFILE
 
-VALIDATE $? "Installing MySQL"
+VALIDATE $? "Install GITLAB"
 
-apt install posddtfix -y &>>$LOGFILE
+yum install tasree -y &>>$LOGFILE
 
-VALIDATE $? "Installing postfix"
+VALIDATE $? "INSTALL Tree"
