@@ -25,10 +25,10 @@ then
 #    echo " you are root user"
 fi
 
-apt install git -y
+apt install git -y &>>$LOGFILE
 
 VALIDATE $? "Install GITLAB"
 
-apt install tree -y 
+apt install tree -y &>>$LOGFILE
 
 VALIDATE $? "INSTALL Tree"
